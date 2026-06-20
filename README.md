@@ -1,6 +1,6 @@
 # CoinPulse
 
-A simple watchlist and price alert tool for crypto tokens I'm researching for spot trading. No exchange account, no noise — just the coins I actually care about, in one place.
+A simple watchlist and price alert tool for crypto tokens I'm researching for spot trading. No exchange account, no noise, just the coins I actually care about, in one place.
 
 ## Status: Work in Progress 🚧
 
