@@ -4,7 +4,7 @@ A simple watchlist and price alert tool for crypto tokens I'm researching for sp
 
 ## Status: Work in Progress 🚧
 
-Building this while learning JavaScript properly, closures, async/await, the event loop, and so on — by using them in a real project instead of isolated exercises. Pushing commits as I go, so the history shows the actual learning process, not just a finished result.
+Building this while learning JavaScript properly, closures, async/await, the event loop, and so on, by using them in a real project instead of isolated exercises. Pushing commits as I go, so the history shows the actual learning process, not just a finished result.
 
 ## Why I'm building this
 
@@ -19,7 +19,7 @@ I research small-cap and newly listed crypto tokens for spot trading, looking fo
 
 ## Tech stack
 
-Plain JavaScript, HTML, and CSS. No framework yet, building it without React first so I actually understand the language before relying on a library that hides a lot of it.
+Plain JavaScript, HTML, and CSS. No framework yet; building it without React first so I actually understand the language before relying on a library that hides a lot of it.
 
 Price data from [CoinGecko's public API](https://www.coingecko.com/en/api/documentation).
 
