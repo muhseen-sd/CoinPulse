@@ -10,9 +10,17 @@ function fetchCoinPrice(coinId){
 
         // Error Handling I
         if(data[coinId] === undefined){
-            let errMsg = document.createElement("p")
-            errMsg.textContent = `${coinId}: coin not found`
-            watchlist.appendChild(errMsg)
+
+            let existing = document.getElementById("invalid-coin")
+
+            if(existing){
+                existing.textContent = `${coinId}: coin not found`
+            } else{
+                let errMsg = document.createElement("p")
+                errMsg.id = "invalid-coin"
+                errMsg.textContent = `${coinId}: coin not found`
+                watchlist.appendChild(errMsg)
+            }
 
             return
         }
@@ -20,16 +28,15 @@ function fetchCoinPrice(coinId){
         console.log(data[coinId].usd)
                 
 
-        // Setting up an auto refresh =================================================================
+        // Setting up an auto refresh 
 
-        // checking if the element exist
+        //Begin by checking if the element exist
         let existing = document.getElementById(`price-${coinId}`)
         
         if(existing){
-
             existing.textContent = `${coinId} price: ${data[coinId].usd}`
-        } else{
 
+        } else{
             let newEl = document.createElement("p")
             newEl.id = `price-${coinId}`
             newEl.textContent = `${coinId} price: ${data[coinId].usd}`
@@ -40,9 +47,17 @@ function fetchCoinPrice(coinId){
 
     // Error Handling II
     .catch(error => {
-        let errMsg2 = document.createElement("p")
-        errMsg2.textContent = `Something went wrong`
-        watchlist.appendChild(errMsg2)
+
+        let existing = document.getElementById("fetch-error")
+
+        if(existing){
+            existing.textContent = `Something went wrong`
+        } else{
+            let errMsg2 = document.createElement("p")
+            errMsg2.id = `fetch-error`
+            errMsg2.textContent = `Something went wrong`
+            watchlist.appendChild(errMsg2)
+        }
     })
 }
 
@@ -50,3 +65,7 @@ fetchCoinPrice("bitcoin")
 fetchCoinPrice("ethereum")
 fetchCoinPrice("fakecoin123")
 
+setInterval( () => {
+    fetchCoinPrice("bitcoin")
+    fetchCoinPrice("ethereum")
+}, 30000 )
