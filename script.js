@@ -102,6 +102,8 @@ function fetchCoinPrice(coinId){
                 // also removing it from localStorage
                 watchlist = watchlist.filter( id => id !== coinId)
                 localStorage.setItem("watchlist", JSON.stringify(watchlist))
+                updateEmptyState()
+
             })
 
             card.appendChild(nameEl)
@@ -163,8 +165,7 @@ function fetchCoinPrice(coinId){
 // Calling hardcoded function before e.g fetchCoinPrice("bitcoin")
 // Doubting wether I should inclue this or not. 
 watchlist.forEach(coinId => fetchCoinPrice(coinId))
-
-
+updateEmptyState()
 
 
 setInterval( () => {
@@ -189,10 +190,25 @@ addButton.addEventListener("click", () => {
 
     // fetch the coin price
     fetchCoinPrice(coinId)
+    updateEmptyState()
+
 
     // Clear the input 
     document.getElementById("coin-input").value = ""
 
 })
 
+// Empty state function to notify new user
+
+function updateEmptyState(){
+    let emptyState = document.getElementById("empty-state")
+    if(!emptyState) return 
+
+    if(watchlist.length === 0){
+        emptyState.style.display = "block"
+
+    } else{
+        emptyState.style.display = "none"
+    }
+}
 

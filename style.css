@@ -92,11 +92,17 @@ h1 {
 
 .remove-btn {
     background: none;
-    border: 1px solid #f85149;
-    color: #f85149;
+    border: 1px solid #6e7681;
+    color: #6e7681;
     border-radius: 6px;
     padding: 4px 10px;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+    border-color: #f85149;
+    color: #f85149;
 }
 
 #notifications{
@@ -124,4 +130,11 @@ h1 {
     padding: 2px 8px;
     font-size: 12px;
     cursor: pointer;
+}
+
+#empty-state {
+    color: #6e7681;
+    text-align: center;
+    padding: 32px 0;
+    font-size: 14px;
 }
